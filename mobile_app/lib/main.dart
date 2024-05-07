@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/src/features/startup/views/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,26 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Homepage(),
-    );
-  }
-}
-
-class Homepage extends StatefulWidget {
-  const Homepage({super.key});
-
-  @override
-  State<Homepage> createState() => _HomepageState();
-}
-
-class _HomepageState extends State<Homepage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Material 3'),
-      ),
+      home: const SplashScreen(),
     );
   }
 }
