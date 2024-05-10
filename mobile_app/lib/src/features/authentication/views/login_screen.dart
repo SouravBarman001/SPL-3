@@ -3,6 +3,8 @@ import 'package:input_form_field/input_form_field.dart';
 
 import '../../../constant/app_text_style.dart';
 import '../../../utils/validators.dart';
+import '../../home/views/calender_view.dart';
+import '../../home/views/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -17,16 +19,34 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordField = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+  void login(){
+    if(_formKey.currentState!.validate()) {
+      if (_emailField.text == 'admin' && _passwordField.text == 'admin') {
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => const HomeScreen(),
+        //   ),
+        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+        );
+      }
+    }}
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
         appBar: AppBar(
+          surfaceTintColor: Colors.white,
           toolbarHeight: 100,
           backgroundColor: Colors.white,
           elevation: 0,
@@ -45,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
        // bottomNavigationBar: const _Footer(),
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: SingleChildScrollView(
               child: Form(
                 key: _formKey,
@@ -80,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(10),
                       fillColor: const Color(0xfffafafa),
                       textEditingController: _emailField,
-                      validator: Validators.isValidEmail,
+                     // validator: Validators.isValidEmail,
                       hintTextStyle: AppTextStyle.textStyleOne(
                         const Color(0xffC4C5C4),
                         14,
@@ -104,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       password: EnabledPassword(),
                       obscuringCharacter: '*',
                       textEditingController: _passwordField,
-                      validator: Validators.isValidPassword,
+                     // validator: Validators.isValidPassword,
                       hintTextStyle: AppTextStyle.textStyleOne(
                         const Color(0xffC4C5C4),
                         14,
@@ -117,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Center(
                       child: ElevatedButton(
                         onPressed: () {
-
+                          login();
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.indigo.shade400,
@@ -136,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 70),
+                    const SizedBox(height: 70),
                   ],
                 ),
               ),

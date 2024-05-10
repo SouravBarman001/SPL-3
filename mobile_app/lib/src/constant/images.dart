@@ -10,6 +10,13 @@ class AppImages {
   // welcome
   static const String welcome1 = 'assets/welcome/background4.png';
 
+  // profile
+  static const String profile1 = 'assets/profile/profile_icon.png';
+
+  // home screen
+  static const String patient = 'assets/home/patient.png';
+  static const String timer = 'assets/home/stopwatch.png';
+  static const String homeBackground2 = 'assets/home/home_background2.png';
 
 
 }

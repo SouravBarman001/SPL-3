@@ -53,6 +53,7 @@ dependencies:
     git:
       url: git@github.com:momshaddinury/input_form_field.git
       ref: version-0.0.6
+  table_calendar: ^3.1.1
 
 dev_dependencies:
   flutter_test:
@@ -86,6 +87,7 @@ flutter:
     - assets/home/
     - assets/onboarding/
     - assets/login/
+    - assets/profile/
     - assets/welcome/
     - lottie-animation/
 
