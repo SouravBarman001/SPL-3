@@ -138,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: Colors.white,
+                                        color: const Color(0xffFFE0DC),
                                         borderRadius: BorderRadius.circular(20),
                                         boxShadow: [
                                           BoxShadow(
@@ -154,11 +154,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                         children: [
                                           Image.asset(AppImages.patient,width: 50,height: 50,),
                                           const SizedBox(height: 5,),
-                                          const Text('Patient : 06',style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w700,
-                                          ),),
+                                          const Text(
+                                            'Patient Info',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -172,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
-                                          color: Colors.white,
+                                          color: const Color(0xffFBDC91).withOpacity(0.8),
                                           borderRadius: BorderRadius.circular(20),
                                           boxShadow: [
                                             BoxShadow(
@@ -186,13 +189,27 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Column(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
-                                            Image.asset(AppImages.totalDoctor,width: 50,height: 50,),
-                                            const SizedBox(height: 5,),
-                                            const Text('Doctors : 20',style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w700,
-                                            ),),
+                                            Column(
+                                              children: [
+                                                ClipOval(
+                                                  child: Image.asset(
+                                                    AppImages.totalDoctor,
+                                                    width: 50,
+                                                    height: 50,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 5),
+                                                const Text(
+                                                  'Doctors Info',
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 15,
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ],
                                         ),
                                       ),
@@ -221,8 +238,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 3,
-                          blurRadius: 3,
+                          spreadRadius: 2,
+                          blurRadius: 2,
                           offset: const Offset(0, 2), // changes position of shadow
                         ),
                       ],
@@ -232,16 +249,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
                       ),
                     ),
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text('Book Appointment',style: TextStyle(
+                        Text('Book Appointment',style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
                         ),),
-                        const SizedBox(height: 5,),
-                        const Text('Book your appointment with our doctors',style: TextStyle(
+                        SizedBox(height: 5,),
+                        Text('Book your appointment with our doctors',style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,
                           fontWeight: FontWeight.w500,

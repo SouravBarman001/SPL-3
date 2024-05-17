@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:input_form_field/input_form_field.dart';
-
 import '../../../constant/app_text_style.dart';
-import '../../home/views/home_screen.dart';
+import '../../home/views/my_home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const HomeScreen(),
+            builder: (context) => const MyHomeScreen(),
           ),
         );
       }
