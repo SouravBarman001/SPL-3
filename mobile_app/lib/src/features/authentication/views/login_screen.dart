@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:input_form_field/input_form_field.dart';
 
 import '../../../constant/app_text_style.dart';
-import '../../../utils/validators.dart';
-import '../../home/views/calender_view.dart';
 import '../../home/views/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -140,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           login();
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.indigo.shade400,
+                          backgroundColor: Colors.indigo.shade400,
                           minimumSize: const Size(400, 50),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),

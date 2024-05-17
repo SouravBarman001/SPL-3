@@ -17,6 +17,7 @@ class AppImages {
   static const String patient = 'assets/home/patient.png';
   static const String timer = 'assets/home/stopwatch.png';
   static const String homeBackground2 = 'assets/home/home_background2.png';
+  static const String totalDoctor = 'assets/home/doctor.png';
 
 
 }
