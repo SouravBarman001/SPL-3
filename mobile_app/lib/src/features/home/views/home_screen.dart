@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        surfaceTintColor:Colors.white12,
         backgroundColor: Colors.white12,
         toolbarHeight: 80,
         //elevation: 1,
@@ -50,12 +51,13 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Container(
             decoration: const BoxDecoration(
+              //color: Color(0xffF7E9DA),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(25),
                 topRight: Radius.circular(25),
               ),
               image: DecorationImage(
-                image: AssetImage(AppImages.homeBackground2),
+                image: AssetImage(AppImages.homeBackground3),
                 fit: BoxFit.cover,
               ),
             ),
@@ -207,11 +209,49 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-
                   Container(
-                    height: 220,
+                    height: 160,
+                    width: double.infinity,
                     //  color: Colors.greenAccent,
-                    margin: const EdgeInsets.only(top: 20,left: 5,right: 5),
+                    margin: const EdgeInsets.only(top: 20,left: 10,right: 10),
+                    padding:  const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                    //  color:  Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 3,
+                          blurRadius: 3,
+                          offset: const Offset(0, 2), // changes position of shadow
+                        ),
+                      ],
+                      image: const DecorationImage(
+                        image: AssetImage(AppImages.appointmentBanner),
+                        fit: BoxFit.cover,
+                        colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Book Appointment',style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                        ),),
+                        const SizedBox(height: 5,),
+                        const Text('Book your appointment with our doctors',style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),),
+                      ],),
+                  ),
+                  Container(
+                    height: 150,
+                    //  color: Colors.greenAccent,
+                    margin: const EdgeInsets.only(top: 15,left: 5,right: 5),
                     padding:  const EdgeInsets.all(5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -219,7 +259,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         Expanded(
                           flex: 2,
                           child: Container(
-                            alignment: Alignment.center,
+                            alignment: Alignment.centerLeft,
+                            padding: const EdgeInsets.only(left: 15),
                             height: 250,
                             // width: 280,
                             // padding: EdgeInsets.all(2),
@@ -229,20 +270,42 @@ class _HomeScreenState extends State<HomeScreen> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 3,
-                                  blurRadius: 7,
+                                  spreadRadius: 2,
+                                  blurRadius: 2,
                                   offset: const Offset(0, 3), // changes position of shadow
                                 ),
                               ],
+                              image: const DecorationImage(
+                                image: AssetImage(AppImages.diagnostics),
+                                fit: BoxFit.cover,
+                                colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
+
+                              ),
                             ),
-                            child: const Text("Box-1"),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text("Diagnostics",style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                ),),
+                                const Text("Get your diagnostics done",style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),),
+                              ],
+                            ),
                           ),
                         ),
                         const SizedBox(width: 15,),
                         Expanded(
                           flex: 2,
                           child: Container(
-                            alignment: Alignment.center,
+                            alignment: Alignment.centerLeft,
+                            padding: const EdgeInsets.only(left: 15),
                             height: 250,
                             // width: 280,
                             // padding: EdgeInsets.all(2),
@@ -252,13 +315,33 @@ class _HomeScreenState extends State<HomeScreen> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 3,
-                                  blurRadius: 7,
+                                  spreadRadius: 2,
+                                  blurRadius: 2,
                                   offset: const Offset(0, 3), // changes position of shadow
                                 ),
                               ],
+                              image: const DecorationImage(
+                                image: AssetImage(AppImages.pharma),
+                                fit: BoxFit.cover,
+                                colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
+                              ),
                             ),
-                            child: const Text("Box-2"),
+                            child: const Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Pharmacy",style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                ),),
+                                Text("Medicine & Health",style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),),
+                              ],
+                            ),
                           ),
                         ),
 
@@ -266,6 +349,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
+
                 ],
               ),
             ),
