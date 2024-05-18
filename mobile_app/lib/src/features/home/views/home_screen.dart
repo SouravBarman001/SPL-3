@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:mobile_app/src/features/book_appointment/views/book_appointment_screen.dart';
 import 'package:mobile_app/src/features/patients/views/patient_screen.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../../../constant/images.dart';
@@ -226,44 +228,52 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-                  Container(
-                    height: 160,
-                    width: double.infinity,
-                    //  color: Colors.greenAccent,
-                    margin: const EdgeInsets.only(top: 20,left: 10,right: 10),
-                    padding:  const EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                    //  color:  Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 2,
-                          offset: const Offset(0, 2), // changes position of shadow
+                  GestureDetector(
+                    onTap: (){
+                      HapticFeedback.mediumImpact();
+
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BookAppointmentScreen()));
+
+                    },
+                    child: Container(
+                      height: 160,
+                      width: double.infinity,
+                      //  color: Colors.greenAccent,
+                      margin: const EdgeInsets.only(top: 20,left: 10,right: 10),
+                      padding:  const EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                      //  color:  Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 2,
+                            offset: const Offset(0, 2), // changes position of shadow
+                          ),
+                        ],
+                        image: const DecorationImage(
+                          image: AssetImage(AppImages.appointmentBanner),
+                          fit: BoxFit.cover,
+                          colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
                         ),
-                      ],
-                      image: const DecorationImage(
-                        image: AssetImage(AppImages.appointmentBanner),
-                        fit: BoxFit.cover,
-                        colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
                       ),
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Book Appointment',style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),),
+                          SizedBox(height: 5,),
+                          Text('Book your appointment with our doctors',style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),),
+                        ],),
                     ),
-                    child: const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Book Appointment',style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                        ),),
-                        SizedBox(height: 5,),
-                        Text('Book your appointment with our doctors',style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),),
-                      ],),
                   ),
                   Container(
                     height: 150,
@@ -299,16 +309,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
                               ),
                             ),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text("Diagnostics",style: TextStyle(
+                                Text("Diagnostics",style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
                                   fontWeight: FontWeight.w700,
                                 ),),
-                                const Text("Get your diagnostics done",style: TextStyle(
+                                Text("Get your diagnostics done",style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 12,
                                   fontWeight: FontWeight.w500,

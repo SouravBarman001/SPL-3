@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app/src/features/home/views/home_screen.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
+import '../../profile/views/profile_screen.dart';
+import '../../report/views/report_screen.dart';
+
 class MyHomeScreen extends StatefulWidget {
   const MyHomeScreen({super.key});
 
@@ -31,14 +34,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
 
   final List<Widget> _listOfWidget = <Widget>[
     const HomeScreen(),
-    Container(
-      alignment: Alignment.center,
-      child: const Icon(
-        Icons.search,
-        size: 56,
-        color: Colors.brown,
-      ),
-    ),
+    const ReportScreen(),
     Container(
       alignment: Alignment.center,
       child: const Icon(
@@ -47,14 +43,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
         color: Colors.brown,
       ),
     ),
-    Container(
-      alignment: Alignment.center,
-      child: const Icon(
-        Icons.tune_rounded,
-        size: 56,
-        color: Colors.brown,
-      ),
-    ),
+    const ProfileScreen(),
   ];
 
 
