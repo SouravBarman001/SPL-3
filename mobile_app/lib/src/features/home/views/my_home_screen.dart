@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app/src/features/home/views/home_screen.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
@@ -98,24 +99,24 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
           : SlidingClippedNavBar(
         backgroundColor: Colors.white,
         onButtonPressed: onButtonPressed,
-        iconSize: 30,
+        iconSize: 25,
         activeColor: const Color(0xFF01579B),
         selectedIndex: selectedIndex,
         barItems: <BarItem>[
           BarItem(
-            icon: Icons.home,
+            icon: FontAwesomeIcons.houseUser,
             title: 'Home',
           ),
           BarItem(
-            icon: Icons.medical_information_rounded,
+            icon: FontAwesomeIcons.flaskVial,
             title: 'Report',
           ),
           BarItem(
-            icon: Icons.bolt_rounded,
-            title: 'Energy',
+            icon: FontAwesomeIcons.calendarDay,
+            title: 'Recent',
           ),
           BarItem(
-            icon: Icons.account_circle,
+            icon: FontAwesomeIcons.idCardClip,
             title: 'Profile',
           ),
         ],

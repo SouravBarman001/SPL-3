@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app/src/features/book_appointment/views/book_appointment_screen.dart';
 import 'package:mobile_app/src/features/patients/views/patient_screen.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -151,12 +152,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                         ],
                                       ),
-                                      child: Column(
+                                      child:  const Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          Image.asset(AppImages.patient,width: 50,height: 50,),
-                                          const SizedBox(height: 5,),
-                                          const Text(
+                                          Icon( FontAwesomeIcons.hospitalUser,size: 30,color: Colors.black54,),
+                                          SizedBox(height: 5,),
+                                          Text(
                                             'Patient Info',
                                             style: TextStyle(
                                               color: Colors.black,
@@ -188,21 +189,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                           ],
                                         ),
-                                        child: Column(
+                                        child: const Column(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Column(
                                               children: [
                                                 ClipOval(
-                                                  child: Image.asset(
-                                                    AppImages.totalDoctor,
-                                                    width: 50,
-                                                    height: 50,
-                                                    fit: BoxFit.cover,
-                                                  ),
+                                                  child: Icon( FontAwesomeIcons.userDoctor,size: 36,color: Colors.black54,),
                                                 ),
-                                                const SizedBox(height: 5),
-                                                const Text(
+                                                SizedBox(height: 5),
+                                                Text(
                                                   'Doctors Info',
                                                   style: TextStyle(
                                                     color: Colors.black,

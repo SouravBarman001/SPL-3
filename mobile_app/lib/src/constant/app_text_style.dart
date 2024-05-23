@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppTextStyle {
-
   static const headLineOne = TextStyle(
     color: Colors.black,
     fontSize: 25.0,
