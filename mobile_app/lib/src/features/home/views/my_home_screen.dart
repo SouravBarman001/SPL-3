@@ -5,6 +5,7 @@ import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
 import '../../profile/views/profile_screen.dart';
 import '../../report/views/report_screen.dart';
+import '../../scan/views/scan_screen.dart';
 
 class MyHomeScreen extends StatefulWidget {
   const MyHomeScreen({super.key});
@@ -36,14 +37,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   final List<Widget> _listOfWidget = <Widget>[
     const HomeScreen(),
     const ReportScreen(),
-    Container(
-      alignment: Alignment.center,
-      child: const Icon(
-        Icons.bolt,
-        size: 56,
-        color: Colors.brown,
-      ),
-    ),
+    const ScanScreen(),
     const ProfileScreen(),
   ];
 
@@ -112,8 +106,8 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
             title: 'Report',
           ),
           BarItem(
-            icon: FontAwesomeIcons.calendarDay,
-            title: 'Recent',
+            icon: FontAwesomeIcons.camera,
+            title: 'Scan',
           ),
           BarItem(
             icon: FontAwesomeIcons.idCardClip,
