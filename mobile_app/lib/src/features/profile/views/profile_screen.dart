@@ -84,7 +84,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const TextField(
                     decoration: InputDecoration(
-                      hintText: 'Aaron',
+                      hintText: 'Sourav',
                       hintStyle: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -102,7 +102,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const TextField(
                     decoration: InputDecoration(
-                      hintText: 'Graham',
+                      hintText: 'Barman',
                       hintStyle: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -120,7 +120,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const TextField(
                     decoration: InputDecoration(
-                      hintText: 'aarong@gmail.com',
+                      hintText: 'sourav.iit@gmail.com',
                       hintStyle: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -141,7 +141,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     trailing: const Text(
-                      '08-05-24', style: TextStyle(
+                      '03-05-99', style: TextStyle(
                       color: Colors.black54,
                       fontSize: 16,
                     ),
