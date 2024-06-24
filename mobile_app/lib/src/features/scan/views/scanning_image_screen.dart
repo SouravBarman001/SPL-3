@@ -7,9 +7,13 @@ import 'package:mobile_app/src/features/scan/views/pdf_screen.dart';
 // import 'package:mobile_app/src/features/scan/views/pdf_viewer.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
 import '../../../constant/app_text_style.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'brain_tumour_classify.dart';
+import 'classification_result.dart';
+
 
 class DottedBorderContainer extends StatefulWidget {
   const DottedBorderContainer({
@@ -85,6 +89,18 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
   }
 
 
+  Future<void> clearStoredData()async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove('imagePath');
+    await prefs.remove('predictedLabel');
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    clearStoredData();
+    super.dispose();
+  }
 
 
     @override
@@ -110,35 +126,45 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
               children: [
                 CustomPaint(
                   painter: DottedBorderPainter(),
-                  child: Container(
-                    height: 200,
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.brain,
-                              size: 80,
-                              color: Colors.indigo.shade400,
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              'Scan MRI Image',
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.w600),
-                            ),
-                          ]),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BrainTumourClassification(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: 200,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.brain,
+                                size: 80,
+                                color: Colors.indigo.shade400,
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                'Scan MRI Image',
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.w600),
+                              ),
+                            ]),
+                      ),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 CustomPaint(
@@ -185,37 +211,47 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      height: 160,
-                      width: MediaQuery.of(context).size.width / 2 - 30,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.shade200,
-                            blurRadius: 5,
-                            spreadRadius: 2,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ClassificationResult(),
                           ),
-                        ],
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            FontAwesomeIcons.image,
-                            size: 50,
-                            color: Colors.indigo.shade400,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'MRI Image',
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w600),
-                          ),
-                        ],
+                        );
+                      },
+                      child: Container(
+                        height: 160,
+                        width: MediaQuery.of(context).size.width / 2 - 30,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade200,
+                              blurRadius: 5,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              FontAwesomeIcons.image,
+                              size: 50,
+                              color: Colors.indigo.shade400,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              'MRI Image',
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     GestureDetector(

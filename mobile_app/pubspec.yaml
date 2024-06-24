@@ -59,6 +59,10 @@ dependencies:
   image_picker: ^1.0.8
   pdf: ^3.6.5
   flutter_pdfview: ^1.3.2
+  tflite: ^1.1.2
+  modal_progress_hud_nsn: ^0.5.1
+  flutter_spinkit: ^5.1.0
+  shared_preferences: ^2.2.3
 
 
 
@@ -97,6 +101,18 @@ flutter:
     - assets/login/
     - assets/profile/
     - assets/welcome/
+    - assets/tflite/cats_dogs.tflite
+    - assets/tflite/cats_dogs.txt
+    - assets/tflite/binaryTumour.tflite
+    - assets/tflite/binaryTumour.txt
+    - assets/tflite/brain.tflite
+    - assets/tflite/model.tflite
+    - assets/tflite/model.txt
+    - assets/tflite/brain.txt
+    - assets/tflite/labels.txt
+    - assets/tflite/model_unquant.tflite
+    - assets/tflite/lungs_cancer.tflite
+    - assets/tflite/lungs_cancer.txt
     - lottie-animation/
 
   # An image asset can refer to one or more resolution-specific "variants", see
