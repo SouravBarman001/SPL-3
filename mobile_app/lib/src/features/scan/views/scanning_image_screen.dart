@@ -50,7 +50,7 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
     } else {
       // Handle permission denial
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Permission denied')),
+        const SnackBar(content: Text('Permission denied')),
       );
     }
   }
@@ -175,7 +175,7 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                     },
                     child: Container(
                       height: 200,
-                      padding: EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -189,10 +189,10 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                                 size: 80,
                                 color: Colors.indigo.shade300,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
-                              Text(
+                              const Text(
                                 'Scan Prescription Image',
                                 style: TextStyle(
                                     fontSize: 15, fontWeight: FontWeight.w600),
@@ -204,7 +204,7 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             SizedBox(
@@ -242,10 +242,10 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                               size: 50,
                               color: Colors.indigo.shade400,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
-                            Text(
+                            const Text(
                               'MRI Image',
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.w600),
@@ -278,12 +278,12 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                               size: 50,
                               color: Colors.indigo.shade400,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(
                               'Total Pages: ${_selectedImages.length}',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.w600),
                             ),
                           ],
@@ -293,7 +293,7 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                   ],
                 )
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Center(
@@ -341,7 +341,7 @@ class DottedBorderPainter extends CustomPainter {
 
     final path = Path();
     final Rect rect = Rect.fromLTWH(0, 0, size.width, size.height);
-    final RRect rrect = RRect.fromRectAndRadius(rect, Radius.circular(15));
+    final RRect rrect = RRect.fromRectAndRadius(rect, const Radius.circular(15));
 
     path.addRRect(rrect);
 

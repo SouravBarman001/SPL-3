@@ -105,8 +105,8 @@ class _LungsCancerState extends State<LungsCancer> with TickerProviderStateMixin
           child: ListView(
             children: <Widget>[
               Image.file(image),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
+              const Padding(
+                padding: EdgeInsets.all(16.0),
                 child: Text(
                   'Detected Tumors',
                   style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
@@ -121,7 +121,7 @@ class _LungsCancerState extends State<LungsCancer> with TickerProviderStateMixin
                     child: ListTile(
                       title: Text(
                         _recognitions[index]['label'],
-                        style: TextStyle(fontSize: 16.0),
+                        style: const TextStyle(fontSize: 16.0),
                       ),
                       subtitle: Text(
                         '${(_recognitions[index]["confidence"] * 100).toStringAsFixed(0)}%',

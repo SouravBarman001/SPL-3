@@ -145,7 +145,7 @@ class _BrainTumourClassificationState extends State<BrainTumourClassification> w
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
                   'Detected Tumor: $_predictedLabel',
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                 ),
               ),
               ListView.builder(
@@ -157,7 +157,7 @@ class _BrainTumourClassificationState extends State<BrainTumourClassification> w
                     child: ListTile(
                       title: Text(
                         _recognitions[index]['label'],
-                        style: TextStyle(fontSize: 16.0),
+                        style: const TextStyle(fontSize: 16.0),
                       ),
                       subtitle: Text(
                         '${(_recognitions[index]["confidence"] * 100).toStringAsFixed(0)}%',
@@ -170,7 +170,7 @@ class _BrainTumourClassificationState extends State<BrainTumourClassification> w
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
                   onPressed: saveReport,
-                  child: Text('Save Report'),
+                  child: const Text('Save Report'),
                 ),
               ),
             ],

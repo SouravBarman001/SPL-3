@@ -21,7 +21,7 @@ class _BinaryClassifyState extends State<BinaryClassify> with TickerProviderStat
   late double _imageWidth;
   late double _imageHeight;
   bool _busy = false;
-  double _containerHeight = 0;
+  final double _containerHeight = 0;
 
   late List _recognitions;
   final ImagePicker _picker = ImagePicker();
@@ -29,7 +29,7 @@ class _BinaryClassifyState extends State<BinaryClassify> with TickerProviderStat
   late AnimationController _controller;
   static const List<IconData> icons = [Icons.camera_alt, Icons.image];
 
-  Map<String, int> _ingredients = {};
+  final Map<String, int> _ingredients = {};
   String _selected = "";
 
   bool _isLoading = false;
@@ -74,7 +74,6 @@ class _BinaryClassifyState extends State<BinaryClassify> with TickerProviderStat
         ? await _picker.pickImage(source: ImageSource.camera)
         : await _picker.pickImage(source: ImageSource.gallery));
     late var image = File(pickedFile!.path);
-    if (image == null) return;
     setState(() {
       _busy = true;
     });
@@ -82,8 +81,6 @@ class _BinaryClassifyState extends State<BinaryClassify> with TickerProviderStat
   }
 
   predictImage(File image) async {
-    if (image == null) return;
-
     _setLoading(true);
 
     await classify(image);
@@ -130,15 +127,15 @@ class _BinaryClassifyState extends State<BinaryClassify> with TickerProviderStat
           child: ListView(
             children: <Widget>[
               Image.file(image),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
+              const Padding(
+                padding: EdgeInsets.all(16.0),
                 child: Text('Detected Objects',
                     style:
                     TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
               ),
               ListView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: _recognitions.length,
                 itemBuilder: (context, index) {
                   return Card(
@@ -158,7 +155,7 @@ class _BinaryClassifyState extends State<BinaryClassify> with TickerProviderStat
                             }
                           },
                           title: Text(_recognitions[index]['label'],
-                              style: TextStyle(fontSize: 16.0)),
+                              style: const TextStyle(fontSize: 16.0)),
                           subtitle: Text(
                               '${(_recognitions[index]["confidence"] * 100).toStringAsFixed(0)}%')));
                 },

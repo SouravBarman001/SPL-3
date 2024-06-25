@@ -6,6 +6,7 @@ import 'package:mobile_app/src/features/patients/views/patient_screen.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../../../constant/images.dart';
 import '../../doctors/views/doctors_screen.dart';
+import '../../pharmacy/views/PharmacyHomePage.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -326,44 +327,50 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(width: 15,),
                         Expanded(
                           flex: 2,
-                          child: Container(
-                            alignment: Alignment.centerLeft,
-                            padding: const EdgeInsets.only(left: 15),
-                            height: 250,
-                            // width: 280,
-                            // padding: EdgeInsets.all(2),
-                            decoration: BoxDecoration(
-                              color:  Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
-                                  blurRadius: 2,
-                                  offset: const Offset(0, 3), // changes position of shadow
+                          child: GestureDetector(
+                            onTap: (){
+                              HapticFeedback.mediumImpact();
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const PharmacyHomePage()));
+                            },
+                            child: Container(
+                              alignment: Alignment.centerLeft,
+                              padding: const EdgeInsets.only(left: 15),
+                              height: 250,
+                              // width: 280,
+                              // padding: EdgeInsets.all(2),
+                              decoration: BoxDecoration(
+                                color:  Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 2,
+                                    offset: const Offset(0, 3), // changes position of shadow
+                                  ),
+                                ],
+                                image: const DecorationImage(
+                                  image: AssetImage(AppImages.pharma),
+                                  fit: BoxFit.cover,
+                                  colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
                                 ),
-                              ],
-                              image: const DecorationImage(
-                                image: AssetImage(AppImages.pharma),
-                                fit: BoxFit.cover,
-                                colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
                               ),
-                            ),
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Pharmacy",style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700,
-                                ),),
-                                Text("Medicine & Health",style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                ),),
-                              ],
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Pharmacy",style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
+                                  ),),
+                                  Text("Medicine & Health",style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),),
+                                ],
+                              ),
                             ),
                           ),
                         ),
