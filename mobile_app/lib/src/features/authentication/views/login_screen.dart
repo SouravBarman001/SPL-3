@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     }}
 
-.nstu@gmail.com
+
    _login(BuildContext context)async{
     await _auth.signInWithEmailAndPassword(email: _emailField.text, password: _passwordField.text).then((value) {
       if(value != null){
