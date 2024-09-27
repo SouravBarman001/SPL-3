@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
+import 'appointment_submit_screen.dart';
 
 class BookAppointmentScreen extends StatefulWidget {
   const BookAppointmentScreen({super.key});
@@ -11,7 +11,6 @@ class BookAppointmentScreen extends StatefulWidget {
 }
 
 class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
-
   final List<IconData> icons = [
     FontAwesomeIcons.stethoscope,     // General Physician
     FontAwesomeIcons.deaf,             // Ear Nose & Throat
@@ -39,10 +38,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
     "Psychiatrist",
   ];
 
-  // generate more random color
-
-
-  // List of specialist names
+  // List of specialist colors
   final List<Color> colors = [
     const Color(0xff63bad4),
     const Color(0xffFCCAC9),
@@ -54,9 +50,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
     const Color(0xffFFDB7D),
     const Color(0xff63bad4),
     const Color(0xffFCCAC9),
-
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -64,54 +58,60 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         centerTitle: true,
-        title: const Text('Find the right specialist',style: TextStyle(
+        title: const Text(
+          'Find the right specialist',
+          style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.w600,
-        ),),
+          ),
+        ),
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
-        //  margin: const EdgeInsets.all(16.0),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio:1,
-            crossAxisSpacing: 22.0,
-            mainAxisSpacing: 20.0,
-          ),
+        child: ListView.builder(
           itemCount: icons.length,
           itemBuilder: (context, index) {
-            return Container(
-              decoration: BoxDecoration(
-                color: Colors.white70,
-                borderRadius: BorderRadius.circular(16.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: const Offset(0, 3),
+            return GestureDetector(
+              onTap: (){
+                // Navigate to the next screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const DoctorAppointmentPage(),
                   ),
-                ],
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
+                );
+
+              },
+              child: Container(
+                alignment: Alignment.center,
+                height: 70.0,
+                margin: const EdgeInsets.only(bottom: 16.0),
+                decoration: BoxDecoration(
+                  color: Colors.white70,
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 3,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: ListTile(
+                  leading: Icon(
                     icons[index],
-                    size: 48.0,
+                    size: 30.0,
                     color: Colors.blue.shade400,
                   ),
-                  const SizedBox(height: 16.0),
-                  Text(
+                  title: Text(
                     specialistNames[index],
-                    textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ],
+                ),
               ),
             );
           },

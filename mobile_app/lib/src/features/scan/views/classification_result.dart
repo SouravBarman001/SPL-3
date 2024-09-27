@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../constant/app_text_style.dart';
+
 class ClassificationResult extends StatefulWidget {
   const ClassificationResult({super.key});
 
@@ -75,7 +77,32 @@ class _ClassificationResultState extends State<ClassificationResult> {
                 style: const TextStyle(fontSize: 16.0),
                 textAlign: TextAlign.justify,
               ),
+
+            SizedBox(height: 60.0),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.indigo.shade400,
+                  minimumSize: const Size(255, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                ),
+                child: Text(
+                  'Sends Report',
+                  style: AppTextStyle.textStyleOne(
+                    Colors.white,
+                    16,
+                    FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
           ],
+
         ),
       ),
     );
