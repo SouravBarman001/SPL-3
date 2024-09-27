@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/src/features/scan/views/image_classfication_page.dart';
 import 'package:mobile_app/src/features/scan/views/scanning_image_screen.dart';
 
 class AddUserScreen extends StatelessWidget {
@@ -72,7 +73,7 @@ class AddUserScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const DottedBorderContainer(),
+                        builder: (context) => const ImageClassificationPage(),
                       ),
                     );
 

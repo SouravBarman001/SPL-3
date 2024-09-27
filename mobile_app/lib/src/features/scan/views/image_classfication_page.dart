@@ -22,7 +22,7 @@ class _ImageClassificationPageState extends State<ImageClassificationPage> {
   bool _loading = false;
 
   // Flask server URL
-  final String flaskServerUrl = 'http://127.0.0.1:5000/classify'; // Replace with your server URL
+  final String flaskServerUrl = 'http://10.0.2.2:5000/classify'; // Replace with your server URL
 
   // Function to pick an image from the gallery or take a picture using the camera
   Future<void> _pickImage(ImageSource source) async {
@@ -43,8 +43,8 @@ class _ImageClassificationPageState extends State<ImageClassificationPage> {
     try {
       var request = http.MultipartRequest('POST', Uri.parse(flaskServerUrl));
       request.files.add(await http.MultipartFile.fromPath('file', imageFile.path));
-
       var response = await request.send();
+      print(response.statusCode);
       if (response.statusCode == 200) {
         var responseData = await response.stream.bytesToString();
         var jsonResponse = json.decode(responseData);
