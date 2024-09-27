@@ -119,7 +119,7 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 20,
+              height: 60,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -136,7 +136,9 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                       );
                     },
                     child: Container(
+                     // margin: const EdgeInsets.only(top: 20),
                       height: 200,
+                      width: 200,
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
@@ -167,46 +169,17 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                 const SizedBox(
                   width: 20,
                 ),
-                CustomPaint(
-                  painter: DottedBorderPainter(),
-                  child: GestureDetector(
-                    onTap: () {
-                      pickImages(context);
-                    },
-                    child: Container(
-                      height: 200,
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                FontAwesomeIcons.camera,
-                                size: 80,
-                                color: Colors.indigo.shade300,
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              const Text(
-                                'Scan Prescription Image',
-                                style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w600),
-                              ),
-                            ]),
-                      ),
-                    ),
-                  ),
-                ),
+
               ],
             ),
             const SizedBox(
               height: 40,
             ),
+
+
+
+
+
             SizedBox(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -254,45 +227,51 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: ()=>viewPdf(context),
-                      child: Container(
-                        height: 160,
-                        width: MediaQuery.of(context).size.width / 2 - 30,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.shade200,
-                              blurRadius: 5,
-                              spreadRadius: 2,
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.filePdf,
-                              size: 50,
-                              color: Colors.indigo.shade400,
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              'Total Pages: ${_selectedImages.length}',
-                              style: const TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.w600),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    // GestureDetector(
+                    //   onTap: ()=>viewPdf(context),
+                    //   child: Container(
+                    //     height: 160,
+                    //     width: MediaQuery.of(context).size.width / 2 - 30,
+                    //     decoration: BoxDecoration(
+                    //       color: Colors.white,
+                    //       borderRadius: BorderRadius.circular(15),
+                    //       boxShadow: [
+                    //         BoxShadow(
+                    //           color: Colors.grey.shade200,
+                    //           blurRadius: 5,
+                    //           spreadRadius: 2,
+                    //         ),
+                    //       ],
+                    //     ),
+                    //     child: Column(
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         Icon(
+                    //           FontAwesomeIcons.filePdf,
+                    //           size: 50,
+                    //           color: Colors.indigo.shade400,
+                    //         ),
+                    //         const SizedBox(
+                    //           height: 10,
+                    //         ),
+                    //         Text(
+                    //           'Total Pages: ${_selectedImages.length}',
+                    //           style: const TextStyle(
+                    //               fontSize: 15, fontWeight: FontWeight.w600),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 )
             ),
+
+
+
+
+
+
             const SizedBox(
               height: 50,
             ),
@@ -303,13 +282,13 @@ class _DottedBorderContainerState extends State<DottedBorderContainer> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo.shade400,
-                  minimumSize: const Size(250, 50),
+                  minimumSize: const Size(255, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25),
                   ),
                 ),
                 child: Text(
-                  'Submit Report',
+                  'Scan MRI Image',
                   style: AppTextStyle.textStyleOne(
                     Colors.white,
                     16,

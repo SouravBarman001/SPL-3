@@ -56,65 +56,65 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: _colorful
-          ? SlidingClippedNavBar.colorful(
-        backgroundColor: Colors.white,
-        onButtonPressed: onButtonPressed,
-        iconSize: 30,
-        // activeColor: const Color(0xFF01579B),
-        selectedIndex: selectedIndex,
-        barItems: <BarItem>[
-          BarItem(
-            icon: Icons.home,
-            title: 'Home',
-            activeColor: Colors.blue,
-            inactiveColor: Colors.orange,
-          ),
-          BarItem(
-            icon: Icons.medical_information_rounded,
-            title: 'Report',
-            activeColor: Colors.yellow,
-            inactiveColor: Colors.green,
-          ),
-          BarItem(
-            icon: Icons.bolt_rounded,
-            title: 'Energy',
-            activeColor: Colors.blue,
-            inactiveColor: Colors.red,
-          ),
-          BarItem(
-            icon: Icons.account_circle,
-            title: 'Profile',
-            activeColor: Colors.cyan,
-            inactiveColor: Colors.purple,
-          ),
-        ],
-      )
-          : SlidingClippedNavBar(
-        backgroundColor: Colors.white,
-        onButtonPressed: onButtonPressed,
-        iconSize: 25,
-        activeColor: const Color(0xFF01579B),
-        selectedIndex: selectedIndex,
-        barItems: <BarItem>[
-          BarItem(
-            icon: FontAwesomeIcons.houseUser,
-            title: 'Home',
-          ),
-          BarItem(
-            icon: FontAwesomeIcons.flaskVial,
-            title: 'Report',
-          ),
-          BarItem(
-            icon: FontAwesomeIcons.camera,
-            title: 'Scan',
-          ),
-          BarItem(
-            icon: FontAwesomeIcons.idCardClip,
-            title: 'Profile',
-          ),
-        ],
-      ),
+      // bottomNavigationBar: _colorful
+      //     ? SlidingClippedNavBar.colorful(
+      //   backgroundColor: Colors.white,
+      //   onButtonPressed: onButtonPressed,
+      //   iconSize: 30,
+      //   // activeColor: const Color(0xFF01579B),
+      //   selectedIndex: selectedIndex,
+      //   barItems: <BarItem>[
+      //     BarItem(
+      //       icon: Icons.home,
+      //       title: 'Home',
+      //       activeColor: Colors.blue,
+      //       inactiveColor: Colors.orange,
+      //     ),
+      //     BarItem(
+      //       icon: Icons.medical_information_rounded,
+      //       title: 'Report',
+      //       activeColor: Colors.yellow,
+      //       inactiveColor: Colors.green,
+      //     ),
+      //     BarItem(
+      //       icon: Icons.bolt_rounded,
+      //       title: 'Energy',
+      //       activeColor: Colors.blue,
+      //       inactiveColor: Colors.red,
+      //     ),
+      //     BarItem(
+      //       icon: Icons.account_circle,
+      //       title: 'Profile',
+      //       activeColor: Colors.cyan,
+      //       inactiveColor: Colors.purple,
+      //     ),
+      //   ],
+      // )
+      //     : SlidingClippedNavBar(
+      //   backgroundColor: Colors.white,
+      //   onButtonPressed: onButtonPressed,
+      //   iconSize: 25,
+      //   activeColor: const Color(0xFF01579B),
+      //   selectedIndex: selectedIndex,
+      //   barItems: <BarItem>[
+      //     BarItem(
+      //       icon: FontAwesomeIcons.houseUser,
+      //       title: 'Home',
+      //     ),
+      //     BarItem(
+      //       icon: FontAwesomeIcons.flaskVial,
+      //       title: 'Report',
+      //     ),
+      //     BarItem(
+      //       icon: FontAwesomeIcons.camera,
+      //       title: 'Scan',
+      //     ),
+      //     BarItem(
+      //       icon: FontAwesomeIcons.idCardClip,
+      //       title: 'Profile',
+      //     ),
+      //   ],
+      // ),
     );
   }
 

@@ -149,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 20),
                     const Text(
                       'Welcome back to',
                       style: AppTextStyle.headLineOne,
@@ -159,78 +159,82 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: AppTextStyle.headLineOne,
                     ),
                     const SizedBox(height: 20),
-                    Text(
-                      'Please enter data to log in',
-                      style: AppTextStyle.textStyleOne(
-                        const Color(0xff838589),
-                        15,
-                        FontWeight.w400,
-                      ),
-                    ),
-                    const SizedBox(height: 50),
-                    const Text(
-                      'Phone',
-                      style: AppTextStyle.smallTextTwo,
-                    ),
-                    const SizedBox(height: 20),
-                    InputFormField(
-                      borderRadius: BorderRadius.circular(10),
-                      fillColor: const Color(0xfffafafa),
-                      textEditingController: _emailField,
-                     // validator: Validators.isValidEmail,
-                      hintTextStyle: AppTextStyle.textStyleOne(
-                        const Color(0xffC4C5C4),
-                        14,
-                        FontWeight.w400,
-                      ),
-                      hintText: 'Enter your Phone Number',
-                      borderType: BorderType.none,
-                    ),
-                    const SizedBox(height: 30),
-                    const Text(
-                      'Password',
-                      style: TextStyle(
-                        color: Color(0xff000000),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,),
-                    ),
-                    const SizedBox(height: 20),
-                    InputFormField(
-                      borderRadius: BorderRadius.circular(10),
-                      fillColor: const Color(0xfffafafa),
-                      password: EnabledPassword(),
-                      obscuringCharacter: '*',
-                      textEditingController: _passwordField,
-                     // validator: Validators.isValidPassword,
-                      hintTextStyle: AppTextStyle.textStyleOne(
-                        const Color(0xffC4C5C4),
-                        14,
-                        FontWeight.w400,
-                      ),
-                      hintText: 'Enter Account Password',
-                      borderType: BorderType.none,
-                    ),
-                    const SizedBox(height: 80),
-                    Center(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _login(context);
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.indigo.shade400,
-                          minimumSize: const Size(400, 50),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        child: Text(
-                          'Login',
-                          style: AppTextStyle.textStyleOne(
-                            Colors.white,
-                            16,
-                            FontWeight.w500,
-                          ),
-                        ),
+
+
+                    // const Text(
+                    //   'Phone',
+                    //   style: AppTextStyle.smallTextTwo,
+                    // ),
+                    // const SizedBox(height: 20),
+                    // InputFormField(
+                    //   borderRadius: BorderRadius.circular(10),
+                    //   fillColor: const Color(0xfffafafa),
+                    //   textEditingController: _emailField,
+                    //  // validator: Validators.isValidEmail,
+                    //   hintTextStyle: AppTextStyle.textStyleOne(
+                    //     const Color(0xffC4C5C4),
+                    //     14,
+                    //     FontWeight.w400,
+                    //   ),
+                    //   hintText: 'Enter your Phone Number',
+                    //   borderType: BorderType.none,
+                    // ),
+                    // const SizedBox(height: 30),
+                    // const Text(
+                    //   'Password',
+                    //   style: TextStyle(
+                    //     color: Color(0xff000000),
+                    //     fontSize: 14,
+                    //     fontWeight: FontWeight.w400,),
+                    // ),
+                    // const SizedBox(height: 20),
+                    // InputFormField(
+                    //   borderRadius: BorderRadius.circular(10),
+                    //   fillColor: const Color(0xfffafafa),
+                    //   password: EnabledPassword(),
+                    //   obscuringCharacter: '*',
+                    //   textEditingController: _passwordField,
+                    //  // validator: Validators.isValidPassword,
+                    //   hintTextStyle: AppTextStyle.textStyleOne(
+                    //     const Color(0xffC4C5C4),
+                    //     14,
+                    //     FontWeight.w400,
+                    //   ),
+                    //   hintText: 'Enter Account Password',
+                    //   borderType: BorderType.none,
+                    // ),
+                    // const SizedBox(height: 80),
+                    // Center(
+                    //   child: ElevatedButton(
+                    //     onPressed: () {
+                    //       _login(context);
+                    //     },
+                    //     style: ElevatedButton.styleFrom(
+                    //       backgroundColor: Colors.indigo.shade400,
+                    //       minimumSize: const Size(400, 50),
+                    //       shape: RoundedRectangleBorder(
+                    //         borderRadius: BorderRadius.circular(10),
+                    //       ),
+                    //     ),
+                    //     child: Text(
+                    //       'Login',
+                    //       style: AppTextStyle.textStyleOne(
+                    //         Colors.white,
+                    //         16,
+                    //         FontWeight.w500,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 80,bottom: 50),
+                      alignment: Alignment.center,
+                     // color: Colors.red,
+
+                      child: Image.asset(
+                        'assets/login/scan.png',
+                        height: 200,
+                        width: 200,
                       ),
                     ),
                     const SizedBox(height: 16),
@@ -243,7 +247,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           checkSignInStatus(context);
                         },
                         style: ElevatedButton.styleFrom(
-                         // backgroundColor: Colors.indigo.shade400,
+                          backgroundColor: Colors.indigo.shade400,
                           minimumSize: const Size(400, 50),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
@@ -255,12 +259,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             const FaIcon(
                               FontAwesomeIcons.google,
                               size: 20,
+                              color: Colors.white,
                             ),
                             const SizedBox(width: 10),
                             Text(
                               'Sign in with Google',
                               style: AppTextStyle.textStyleOne(
-                                Colors.black,
+                                Colors.white,
                                 16,
                                 FontWeight.w500,
                               ),
