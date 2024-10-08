@@ -50,7 +50,7 @@ The project is designed with a modular architecture, integrating the following c
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/neuroscan.git
+   git clone [https://github.com/yourusername/neuroscan.git](https://github.com/SouravBarman001/SPL-3/tree/main)
    cd neuroscan
    ```
 
