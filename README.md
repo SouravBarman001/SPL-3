@@ -46,40 +46,6 @@ The project is designed with a modular architecture, integrating the following c
 - Python 3.11.7 with Flask 2.2.5
 - TensorFlow and Keras for model handling
 
-### Steps to Run
-
-1. **Clone the Repository**:
-   ```bash
-   git clone [https://github.com/yourusername/neuroscan.git](https://github.com/SouravBarman001/SPL-3/tree/main)
-   cd neuroscan
-   ```
-
-2. **Flutter Setup**:
-   - Install Flutter dependencies:
-     ```bash
-     flutter pub get
-     ```
-
-3. **Backend Setup**:
-   - Navigate to the backend directory:
-     ```bash
-     cd backend
-     ```
-   - Install the required Python dependencies:
-     ```bash
-     pip install -r requirements.txt
-     ```
-   - Run the Flask server:
-     ```bash
-     python app.py
-     ```
-
-4. **Run the Flutter App**:
-   - Make sure you have an emulator or a connected device.
-   - Launch the app:
-     ```bash
-     flutter run
-     ```
 
 ## Usage
 1. **Add User Information**: On the home screen, users can input their details like name, phone number, weight, and email.
@@ -91,13 +57,10 @@ The project is designed with a modular architecture, integrating the following c
 - **Multi-language Support**: Implement multi-language support to make the app accessible to non-English speakers.
 - **Real-Time MRI Scanning Integration**: Explore integrating real-time MRI image scanning via medical devices for live analysis.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ---
 
 ### Contributors
-- [Your Name](https://github.com/SouravBarman001)
+- [Sourav Barman](https://github.com/SouravBarman001)
 
 ---
 ![App Demo](https://drive.google.com/drive/folders/1bCdaybjFXeevvDnlkUD6ySrF_72lmYUT?usp=drive_link)
