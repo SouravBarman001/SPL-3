@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/src/features/scan/views/image_classfication_page.dart';
-import 'package:mobile_app/src/features/scan/views/scanning_image_screen.dart';
 
 class AddUserScreen extends StatelessWidget {
   AddUserScreen({super.key});
@@ -16,8 +15,9 @@ class AddUserScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add User Information', style: TextStyle(color: Colors.black,fontWeight: FontWeight.w400)),
-        //backgroundColor: Colors.indigo.shade400,
+        title: const Text('Add Patient Information',style: TextStyle(
+        fontWeight: FontWeight.bold,
+        ),),
         centerTitle: true,
       ),
       body: Padding(
@@ -69,15 +69,7 @@ class AddUserScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
 
-
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ImageClassificationPage(),
-                      ),
-                    );
-
-                    // Handle the Add action
+                    // Collect user data
                     final name = nameController.text;
                     final address = addressController.text;
                     final number = numberController.text;
@@ -85,32 +77,29 @@ class AddUserScreen extends StatelessWidget {
                     final bloodGroup = bloodGroupController.text;
                     final email = emailController.text;
 
-                    // Example of showing the entered data
-                    // showDialog(
-                    //   context: context,
-                    //   builder: (context) => AlertDialog(
-                    //     title: const Text('User Information'),
-                    //     content: Text(
-                    //       'Name: $name\n'
-                    //           'Address: $address\n'
-                    //           'Phone Number: $number\n'
-                    //           'Weight: $weight kg\n'
-                    //           'Blood Group: $bloodGroup\n'
-                    //           'Email: $email',
-                    //     ),
-                    //     actions: [
-                    //       TextButton(
-                    //         onPressed: () {
-                    //           Navigator.of(context).pop();
-                    //         },
-                    //         child: const Text('OK'),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // );
+                    // Navigate to the next screen with user info
+                    if(name.isEmpty && address.isEmpty && number.isEmpty && weight.isEmpty && bloodGroup.isEmpty && email.isEmpty){
+
+                    }else{
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImageClassificationPage(
+                            userInfo: {
+                              'name': name,
+                              'address': address,
+                              'number': number,
+                              'weight': weight,
+                              'bloodGroup': bloodGroup,
+                              'email': email,
+                            },
+                          ),
+                        ),
+                      );
+                    }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.indigo.shade400,
+                    backgroundColor: Colors.indigo,
                     padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 12.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
@@ -118,11 +107,7 @@ class AddUserScreen extends StatelessWidget {
                   ),
                   child: const Text(
                     'Add',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
+                    style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.white),
                   ),
                 ),
               ),

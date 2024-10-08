@@ -75,6 +75,8 @@ dependencies:
   flutter_typeahead: ^5.2.0
   sqflite: ^2.3.2
   path: ^1.8.3
+  mailer: ^6.2.0
+  flutter_email_sender: ^6.0.3
 
 
 
@@ -112,6 +114,7 @@ flutter:
     - assets/home/
     - assets/onboarding/
     - assets/login/
+    - assets/login/home_back.png
     - assets/profile/
     - assets/welcome/
     - assets/tflite/cats_dogs.tflite

@@ -23,6 +23,9 @@ class AppImages {
   static const String bookAppointment = 'assets/home/book_appointment.jpg';
   static const String appointmentBanner = 'assets/home/appointment_banner.png';
 
+
+  static const String homeBack = 'assets/login/home_back.png';
+
   static const String pharma = 'assets/home/pharma.png';
   static const String diagnostics = 'assets/home/diagnostics.png';
 
