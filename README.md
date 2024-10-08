@@ -63,5 +63,5 @@ The project is designed with a modular architecture, integrating the following c
 - [Sourav Barman](https://github.com/SouravBarman001)
 
 ---
-![App Demo](https://drive.google.com/drive/folders/1bCdaybjFXeevvDnlkUD6ySrF_72lmYUT?usp=drive_link)
+![App Demo]([https://drive.google.com/drive/folders/1bCdaybjFXeevvDnlkUD6ySrF_72lmYUT?usp=drive_link](https://youtu.be/wobr5BoN5fw))
 
