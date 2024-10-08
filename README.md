@@ -63,5 +63,5 @@ The project is designed with a modular architecture, integrating the following c
 - [Sourav Barman](https://github.com/SouravBarman001)
 
 ---
-![App Demo](https://youtu.be/wobr5BoN5fw)
+[Watch the Demo on YouTube](https://www.youtube.com/watch?v=YourVideoID](https://youtu.be/wobr5BoN5fw)
 
